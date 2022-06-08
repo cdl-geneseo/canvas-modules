@@ -1,0 +1,51 @@
+<div style="max-width: 900px; margin: auto;">
+    <h2>Using GitHub</h2>
+    <p>Now that we've set ourselves up, let's go ahead and start using GitHub!</p>
+    <p>Remember, you're not doing your actual&nbsp;<em>work</em> in GitHub, you're using GitHub to store, track, and share that work with your collaborators (or audience). So, the most important part of working with GitHub is configuring everything appropriately on your own computer, so that that communication is seamless.</p>
+    <p>There are a few basic practices that you'll need to get a handle on when using GitHub to work on a project, which we'll refer to in this chapter as clone, edit, and push. Cloning and pushing are two terms straight out of the GitHub lexicon, and we'll explain them in detail below. Editing, however, is a general term we'll use to describe the actual work you're doing on your project.</p>
+    <h3>Clone</h3>
+    <p>While not the only way to share a repository between the GitHub website and your machine, we recommend that you start out by "cloning" a repository that you create on your GitHub account in your browser to your machine to initialize communication and tracking.</p>
+    <h4>Create a new repository</h4>
+    <p>We'll begin by going to your <a class="inline_disabled" href="https://github.com/" target="_blank" rel="noopener">GitHub</a> account and clicking on the plus sign next to your profile icon in the upper righthand side of the page. From the dropdown, select "New repository" as shown in the screenshot below.</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.geneseo.edu/courses/20408/files/1978223/preview" alt="Screenshot of adding a new repository on GitHub." width="208" height="170" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/1978223" data-api-returntype="File" /></p>
+    <p>On the next page, you'll need to name your repository something short but descriptive. The name of your project is a good idea.</p>
+    <p>Unless you have a GitHub Pro account, you'll have to accept the repository as Public, which means that anyone on the internet can see and submit future pull requests (to be explained later) to your repository. This default somewhat convenient for or purposes, as we are firm believers in public-facing, open work. We're a learning community, which, at the risk of sounding diffuse, means we find community in our efforts to learn, and those efforts, necessarily, should be out in the open. While it can feel vulnerable to work this way, it's the simplest way to share what you're learning with others who may be interested in similar pursuits.</p>
+    <p>Under "initialize this repository with:" be sure to check "Add a README file" to populate your repository with something. README files act as homepages for repositories, typically used for telling visitors what the project is about, providing essential prerequisite information, pointing to necessary resources, etc. We'll write in the README later.</p>
+    <p>At this point, click the "Create repository" button.</p>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.geneseo.edu/courses/20408/files/1973976/preview" alt="Screenshot of creating a new repository on the GitHub website. " width="532" height="563" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/1973976" data-api-returntype="File" /></p>
+    <p>Once you create the repository, this is what you should see:</p>
+    <p style="text-align: center;"><img src="https://canvas.geneseo.edu/courses/20408/files/1973982/preview" alt="Screenshot of new repository on GitHub." width="607" height="356" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/1973982" data-api-returntype="File" /></p>
+    <h4 style="text-align: left;">Cloning to our machine</h4>
+    <p>Now that you have a fresh, new repository you'll have to move it to your computer before you can start adding files to it. To do that, you'll need to click the "Code" button in the upper righthand corner of the file menu. Make sure the "SSH" option is selected underneath the "Clone" header and then click on the copy button to the right of the code line. See the screenshot below:</p>
+    <p style="text-align: center;"><img src="https://canvas.geneseo.edu/courses/20408/files/1973981/preview" alt="Screenshot of cloning using SSH." width="293" height="257" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/1973981" data-api-returntype="File" /></p>
+    <p>Now that the SSH link is in your clipboard, go back to your computer, open your terminal, and follow these next steps:</p>
+    <p style="padding-left: 40px;">1. <code>cd</code> into where you want your repository to be.</p>
+    <p style="padding-left: 40px;">2. Enter <code>git clone </code>then paste in the link in your clipboard, or type <code>git@github.com:<em>youraccount</em>/<em>yourrepo</em>.git</code>&nbsp;</p>
+    <p style="padding-left: 40px;">3. Enter <code>ls</code> to see if your repository is present.</p>
+    <p style="padding-left: 40px;">4. <code>cd</code> into your repository and <code>ls</code> to see if your README file is present.</p>
+    <h3>Edit</h3>
+    <p>As mentioned in this chapter's introduction, we're using the term "edit" to refer to the work that you do in your repository from your computer. While you're doing your edits, you won't necessarily be actively interacting with Git, but everything that you move in or out, or change within your repository will ping with Git.&nbsp;</p>
+    <p>Let's practice editing by making some changes to that README file.</p>
+    <p>While you're in your repository directory in your terminal, enter</p>
+    <p><code>code README.md</code></p>
+    <p>to open the Markdown file in VS Code. You should have this command set up in your command line by now, but, if you don't or can't, simply replace <code>code</code> with <code>open</code>.</p>
+    <p>Now you can type something in this file. Whatever you want. Then make sure you save it.</p>
+    <h3>Push</h3>
+    <p>Woo, you did it! You made an edit in Git! You may want to rush to your repository on GitHub to check and see if anything has changed, but hold on. There are a couple of things we have to do to before those changes you made can be reflected in the web.</p>
+    <p>In order to "push" to GitHub (getting your edits on the web version of your repository), you'll need to follow the "add," "commit," "push" workflow.</p>
+    <p style="padding-left: 40px;">1. Check what has been changed on your computer by entering</p>
+    <p style="padding-left: 40px;"><code>git status</code></p>
+    <p style="padding-left: 40px;">You should see a brief report that lists "Changes not staged for commit" and labels your README as "modified."</p>
+    <p style="padding-left: 40px;">2. Stage your changes for commit by "adding" the file:</p>
+    <p style="padding-left: 40px;"><code>git add&nbsp;<em>yourfilename.md</em></code></p>
+    <p style="padding-left: 40px;">or, if there are multiple files, add them all with</p>
+    <p style="padding-left: 40px;"><code>git add .</code></p>
+    <p style="padding-left: 40px;">Once you hit enter, if you were successful, you won't see a result, just the command line prompt again. Feel free at this point to go another <code>git status</code> and you should see "Changes to be committed:" with your modified file(s) listed. Now you're ready to commit!</p>
+    <p style="padding-left: 40px;">3. To commit, enter the following:</p>
+    <p style="padding-left: 40px;"><code>git commit -m "comment describing what you're doing"</code></p>
+    <p style="padding-left: 40px;">Now, this is important. You&nbsp;<em>must</em> include the <code>-m</code> tag&nbsp;<em>and</em> a comment in double-quotes in order to complete your commit. If you don't, you'll be forced to enter a comment in a native CLI text editor like vim or nano, and that's a scenario you'd like to avoid, trust us.</p>
+    <p style="padding-left: 40px;">4. Now that you've committed, it's time to push. To do so, enter</p>
+    <p style="padding-left: 40px;"><code>git push origin main</code></p>
+    <p style="padding-left: 40px;">Now you can go back to the web version of your repository and refresh. You should see your updated README.</p>
+    <p style="padding-left: 40px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.geneseo.edu/courses/20408/files/1978513/preview" alt="Screenshot of test repository with updated README text." width="686" height="279" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/1978513" data-api-returntype="File" /></p>
+</div>

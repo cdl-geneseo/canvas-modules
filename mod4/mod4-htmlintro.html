@@ -1,0 +1,69 @@
+<div style="max-width: 900px; margin: auto;">
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" role="presentation" src="https://canvas.geneseo.edu/courses/20408/files/2054909/preview" alt="" width="787" height="443" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/2054909" data-api-returntype="File" /></p>
+    <h2><span style="color: #000000;">What is HTML?</span></h2>
+    <p><span style="color: #000000;">By now, you probably know that HTML is the foundation for creating webpages. HTML, or <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage, wraps around the body text of your website in order to translate it into something that your browser can understand and display.&nbsp;</span></p>
+    <p><span style="color: #000000;">It's helpful to think of HTML in terms of nesting: boxes within boxes. Items are nested between "tags", which come in pairs of&nbsp;<em>opening</em> and&nbsp;<em>closing</em>.&nbsp;</span></p>
+    <p><code>&lt;p&gt;An opening tag is at the beginning of a line, and a closing tag is at the end with a forward slash.&lt;/p&gt;</code></p>
+    <h3><span style="color: #000000;">Breaking down the "code" word</span></h3>
+    <p><span style="color: #000000;"><span>Sometimes when we talk about "code," things can get a little confusing, and not just in the obvious ways. The word "code" itself has a few different meanings, and many connotations. It's important that you understand the difference between&nbsp;<em>code</em>, or, programming languages, and markup, like HTML.</span></span></p>
+    <p><span style="color: #000000;">HTML is a&nbsp;<em>markup</em>&nbsp;language, not a programming language. Programming languages are used to transform data, by creating scripts that organize an output of data based on a particular input of data. A markup language is used to control the presentation of data.</span></p>
+    <p><span style="color: #000000;">For a practical example of this difference, we can think about tables. A programming language can help you search through a table, understand the kinds of data the table includes, find particular data points, or transform its content into other kinds of data, such as frequencies. A markup language would instead determine the content, layout, and visual presentation of the table.</span></p>
+    <p><span style="color: #000000;">Fundamentally, then, a script or program is a set of instructions given to the computer. A document in a markup language determines how information is presented to a user.</span></p>
+    <p><span style="color: #000000;"><strong>Markup vs Markdown:</strong>&nbsp;Markdown and HTML are both types of markup languages; Markdown is a play on words. Markup languages help format content.</span></p>
+    <h2><span style="color: #000000;">Basic HTML Template</span></h2>
+    <p>Below is a basic template for an empty HTML Document.</p>
+    <p><img src="https://canvas.geneseo.edu/courses/20408/files/2071287/preview" alt="Screenshot of basic HTML template." width="291" height="305" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/2071287" data-api-returntype="File" /></p>
+    <div>
+        <p>&nbsp;</p>
+    </div>
+    <p>HTML documents start with a<span>&nbsp;</span><code>DOCTYPE</code><span>&nbsp;</span>declaration that states what version of HTML is being used. This tells the browser how to read the code below it to render the page. If the webpage were written with a different markup language (i.e. XML, XHTML), it would tell you here.</p>
+    <p>After the<span>&nbsp;</span><code>DOCTYPE</code>, we see the start of the<span>&nbsp;</span><strong>Root Element</strong>. EVERYTHING&mdash;all content&mdash;that you want presented on this page and all information about how you want that information to be organized and styled goes in the root element, and it is demarcated by<span>&nbsp;</span><code>&lt;html&gt;</code><span>&nbsp;</span>and<span>&nbsp;</span><code>&lt;/html&gt;</code>.</p>
+    <p>The root element begins by indicating which language the document is written in; and in this basic template,<span>&nbsp;</span><code>en</code><span>&nbsp;</span>tells us and the computer that we are writing in English.</p>
+    <p>Within the root element of the basic template above, you'll notice the two main sections of all HTML documents: a head section (demarcated by<span>&nbsp;</span><code>&lt;head&gt;</code><span>&nbsp;</span>and<span>&nbsp;</span><code>&lt;/head&gt;</code>) and a body section (demarcated by<span>&nbsp;</span><code>&lt;body&gt;</code><span>&nbsp;</span>and<span>&nbsp;</span><code>&lt;/body&gt;</code>).</p>
+    <p>The<span>&nbsp;</span><strong>head section</strong><span>&nbsp;</span>contains basic information about the file such as the title, keywords, authors, a short description, and so on. This is also where you will link to your CSS stylesheet which describes how you want the page styled&mdash;colors, fonts, size of text, and positioning of elements on the page.</p>
+    <p>The<span>&nbsp;</span><strong>body section</strong><span>&nbsp;</span>contains the content of the page, including paragraphs, images, links, and more, and indicates how this content is to be structured on the page.</p>
+    <h2>Activity</h2>
+    <p>Create a folder called<span>&nbsp;</span><code>htmlpractice</code><span>&nbsp;</span>in your projects folder (<code>~/Desktop/projects/htmlpractice</code>). Inside that folder, create a new text file and save it as<span>&nbsp;</span><code>index.html</code>.</p>
+    <p>Let's use the command line to create the new folder and file:</p>
+    <ol>
+        <li>
+            <p>Open your terminal.</p>
+        </li>
+        <li>
+            <p>Navigate to your projects folder using this command:</p>
+            <div class="highlight highlight-text-shell-session position-relative overflow-auto">
+                <p><code>$ <span class="pl-s1"><span class="pl-c1">cd</span> <span class="pl-k">~</span>/Desktop/projects</span></code></p>
+            </div>
+        </li>
+        <li>
+            <p>Create a new folder:</p>
+            <div class="highlight highlight-text-shell-session position-relative overflow-auto">
+                <p><code>$ <span class="pl-s1">mkdir htmlpractice</span></code></p>
+            </div>
+        </li>
+        <li>
+            <p>Use your Visual Studio Code text editor to create a file called<span>&nbsp;</span><code>index.html</code>:<span>&nbsp;</span><code>code index.html</code>.</p>
+        </li>
+        <li>
+            <p>Paste the template above (starting with<span>&nbsp;</span><code>&lt;!DOCTYPE html&gt;</code>) into the new file.</p>
+        </li>
+    </ol>
+    <p>The<span>&nbsp;</span><code>index.html</code><span>&nbsp;</span>file is your default homepage for the website we are creating. This is an industry standard, because web browsers tend to recognize the<span>&nbsp;</span><code>index.html</code><span>&nbsp;</span>page as the opening page to the directory that is your website. See<span>&nbsp;</span><a href="https://www.lifewire.com/index-html-page-3466505">here</a><span>&nbsp;</span>for more explanation.</p>
+    <p>Once you've created your new file, open it with a web browser using your graphical user interface:</p>
+    <p>On macOS, click on the Finder in your dock (the apps at the bottom of the screen) and click on Desktop on the left. From there, navigate to<span>&nbsp;</span><code>projects</code>, then<span>&nbsp;</span><code>htmlpractice</code>. Alternately, you can click the projects folder icon on your Desktop and find it from there. If you're using a Mac and would prefer to use the command line, you can also type<span>&nbsp;</span><code>open index.html</code><span>&nbsp;</span>from within your<span>&nbsp;</span><code>htmlpractice</code><span>&nbsp;</span>folder.</p>
+    <p>On Windows, click the<span>&nbsp;</span><code>projects</code><span>&nbsp;</span>folder icon on your desktop. Navigate to<span>&nbsp;</span><code>projects</code>, then<span>&nbsp;</span><code>htmlpractice</code>. Double click the<span>&nbsp;</span><code>index.html</code><span>&nbsp;</span>file. If it does not open in a browser, right click the<span>&nbsp;</span><code>index.html</code><span>&nbsp;</span>icon and select "Open with..." from the menu. Select Firefox or Google Chrome from the app list that appears.</p>
+    <h3>What Happens?</h3>
+    <p>When you open the empty template, you'll see only a blank web page. Open your secondary menu (right click on Windows, hold<span>&nbsp;</span><kbd>control</kbd><span>&nbsp;</span>and click with macOS) and view the page source.</p>
+    <h3>What Should Happen When I Open Each of my Two New Files?</h3>
+    <p>When you "View Page Source," you should see the code for the basic template.</p>
+    <p>No content renders on the page, because there is no content in the template at this time.</p>
+    <h3>Evaluation</h3>
+    <p>Which of these two HTML commands is also known as the "root element"?</p>
+    <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code></li>
+        <li><code>&lt;html lang="en"&gt;</code>*</li>
+    </ul>
+    <hr />
+    <p><sub>Based on a work by the CUNY Graduate Center at<span>&nbsp;</span><a href="https://github.com/DHRI-Curriculum">https://github.com/DHRI-Curriculum/html-css</a>.</sub></p>
+    <p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://camo.githubusercontent.com/0df8fd3e955d97ae69dedfa2568fb2dd4186cd60917ca40aefabb7466d5b46ce/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d73612f342e302f38387833312e706e67" alt="Creative Commons License" data-canonical-src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
+</div>

@@ -1,0 +1,88 @@
+<div style="max-width: 900px; margin: auto;">
+    <h2 id="why-interoperability-matters">Why interoperability matters</h2>
+    <p>As Cory Doctorow explains in <a href="https://locusmag.com/2020/09/cory-doctorow-ip/">&ldquo;IP&rdquo;</a>, the term <em>interoperability</em></p>
+    <blockquote>
+        <p>describes two products or services that can somehow work together with one another. From opening your Word documents in Google Docs, to using third-party ink cartridges in your printer to replacing your watch band, to changing the stereo that came with your car, interoperability is a broad, universal, essential characteristic of all of our technology.</p>
+    </blockquote>
+    <p>Except when it&rsquo;s not. Doctorow&rsquo;s point about the technological universe we now inhabit is that too much of it <em>lacks</em> interoperability. You can&rsquo;t just grab your Facebook data from Facebook and put it on a platform you like better. You have more freedom with content you put into Google, but you're still limited in important ways.</p>
+    <p>In the early years of personal computing, Word documents created on PC&rsquo;s couldn&rsquo;t be opened on Macs, and <em>vice versa</em>, until someone came along and wrote a special program designed to translate one kind of Word document into the other. Word lacked interoperability. In the early years of the web, browsers such as Netscape and Internet Explorer competed to create features that would work only for their own users. If the web had continued to develop along this route, we wouldn&rsquo;t be able to do what we can do now: load virtually any web page in the browser of our choice. We were saved from a radically un-interoperable web by the success of the <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">World Wide Web Consortium</a>, founded in 1994 as a body intended to put shared and open standards at the web&rsquo;s heart. Sure, we still have the experience that some pages and their features work better in one browser or another. But largely, we&rsquo;re free to choose, a freedom we owe to the fact that HTML, the language in which web pages are written, is broadly interoperable.</p>
+    <p>Eventually, Microsoft changed its Office products so that users could operate with them on either Macs or PCs. They accomplished this in part by adopting a standard related to HTML called XML (hence the <em>x</em> at the end of extensions such as .<em>docx</em> and .<em>xlsx</em> &mdash; missing from older Office documents), which is similarly open. Still Microsoft&rsquo;s implementation of the standard remains proprietary, limiting our ability to modify that implementation on our own devices &mdash; to alter the code on which the products run. The power to modify, as Doctorow explains, is another crucial feature of interoperability: &ldquo;If your paper doesn&rsquo;t fit your envelope, you can fold it; if it doesn&rsquo;t fit your printer, you can trim it.&rdquo; Mods of this type, applied to computer code, are at the root of the original meaning of the term &ldquo;hack.&rdquo;</p>
+    <h2 id="plain-text">Plain text</h2>
+    <p>Plain text &mdash; text containing, on the whole, nothing but the letters and numbers on your keyboard, with no formatting applied (nothing bold, nothing in italics, no colors, no differences in font size) &mdash; is a highly interoperable format for storing and sharing textual content (e.g., books, blog posts), numerical data, and executable code.</p>
+    <p>Plain text documents look pretty much the same whether we&rsquo;re working with them in a terminal window or any one of a large number of plain text editors: VS Code, TextEdit (Mac), Notepad (Windows), Atom, etc. If you create a document in one of these environments, you can open and continue to work on it in any of the others.</p>
+    <p><a href="https://www.gutenberg.org/">Project Gutenberg</a> makes public domain works of all kinds available in multiple formats, including plain text. Open a browser (any browser!) and direct it to</p>
+    <p><code>https://www.gutenberg.org/files/205/205-0.txt</code></p>
+    <p>Your browser will show you a plain text version of <em>Walden and Civil Disobedience</em>, by Henry David Thoreau. Notice that <code>.txt</code> extension at the end of the URL. More about that in a moment.</p>
+    <p>Now open a terminal window and type</p>
+    <p><code>curl https://www.gutenberg.org/files/205/205-0.txt</code></p>
+    <p>You may have to wait a few seconds, but very soon you should see exactly the same content in your terminal window that you see in your browser.</p>
+    <p>Whether you&rsquo;re looking at your browser or your terminal, you&rsquo;re looking at a file that has been transferred from a remote computer to your own. The remote computer is one capable of <em>serving</em> files to other computers that connect to it &mdash; hence the term <em>server</em>. The server <em>hosts</em> the file, accepts connections from <em>client</em> computers like your own, and responds to a <em>request</em> for the file &mdash; such as that made by your browser or by <code>curl</code> &mdash; by delivering the file&rsquo;s contents.</p>
+    <p>In either case, the file&rsquo;s contents are printed to your screen, but they&rsquo;re not <em>saved</em> anywhere on your computer&rsquo;s own drive. With <code>curl</code>, you can take the next step and save those contents locally using the <em>redirect</em> symbol. Try this out. Type</p>
+    <p><code>curl https://www.gutenberg.org/files/205/205-0.txt &gt; thoreau.txt</code></p>
+    <p>The file will be saved to your computer at whatever location you&rsquo;re at when you issue the command. If that&rsquo;s your home folder, you can switch over to your Finder or File Explorer, where you should see a new file, <code>thoreau.txt</code>.</p>
+    <p>You can right-click on it and tell your computer to open it in VS Code. Or, from the command line, you can type:</p>
+    <p><code>code thoreau.txt</code></p>
+    <p>The file will open in VS Code, where it should look pretty much the same as it does in both your terminal window or your browser.</p>
+    <p>That&rsquo;s the interoperability of plain text!</p>
+    <h2 id="html-documents-are-plain-text-documents">HTML documents are plain text documents</h2>
+    <p>Go back to your browser and point it to <a class="uri" href="https://www.gutenberg.org/cache/epub/205/pg205-images.html">https://www.gutenberg.org/cache/epub/205/pg205-images.html</a></p>
+    <p><em>Walden and Civil Disobedience</em> again &mdash; but looking very different! We have a variety of fonts and font sizes, italicized text, links, and even an image.</p>
+    <p>Now go back to your terminal window and issue the following command:</p>
+    <p><code>curl https://www.gutenberg.org/cache/epub/205/pg205-images.html</code></p>
+    <p>Thoreau&rsquo;s words are still there, but interspersed among them are bits of HTML code, such as <code>&lt;p&gt;</code> and <code>&lt;div class="c2"&gt;</code>.</p>
+    <p>These bits of code are just more plain text. But your browser doesn&rsquo;t render them as text. Instead, your browser treats these bits between pointy brackets as <em>instructions</em> about how to <em>render</em> the text in your browser window.</p>
+    <p>HTML documents are just plain text documents. Browsers are software applications that understand how to distinguish the textual content from the instructions &mdash; again, also written in plain text &mdash; and have the capability to transform the content, following the instructions, into formatted text.</p>
+    <p>Once again, you&rsquo;ve connected to Project Gutenberg&rsquo;s file server, sent a request for this file, and had it delivered to you &mdash; whether in your terminal or your browser &mdash; for temporary display on your local machine. Notice, though, that this time the file you&rsquo;ve requested has the extension <code>.html</code> rather than <code>.txt</code>. Your browser knows that it should treat any file with that extension as an HTML file and process &mdash; aka <em>parse</em> &mdash; the instructions. Your terminal doesn&rsquo;t care about the extension, printing both content and instructions to your screen.</p>
+    <p>Now let&rsquo;s repeat what we did with Project Gutenberg&rsquo;s <code>.txt</code> file, this time using <code>curl</code> plus a redirect to save the <code>.html</code> file to your machine.</p>
+    <p><code>curl https://www.gutenberg.org/cache/epub/205/pg205-images.html &gt; thoreau.html</code></p>
+    <p>Find the file. If you open it in your browser, you should see formatted text, just as you do on the web. But if you open it in VS Code, you simply should see content plus pointy-bracketed instructions like <code>&lt;p&gt;</code>.</p>
+    <p>VS Code does do one thing that your terminal window (probably) doesn&rsquo;t do, however: it puts the HTML instructions in a different color from the textual content, making it easier for you to tell instructions and content from one another.</p>
+    <h2 id="html-and-markdown">HTML and markdown</h2>
+    <p>The abbreviation HTML stands for <em>HyperText Markup Language</em>, and so the pointy-bracketed instructions on HTML are sometimes called <em>markup</em>. They&rsquo;re also sometimes called <em>code</em>, which is a perfectly fine word to use for them as long as we realize that they don&rsquo;t do the same thing, when parsed, that <em>executable code</em> does. HTML isn&rsquo;t a programming language. It&rsquo;s a markup language.</p>
+    <p>HTML isn&rsquo;t a terribly difficult language to learn or write, but it can be a bit fussy, and it takes time to type all those pointy brackets! These are some of the drawbacks that led Jon Gruber and Aaaron Swartz to create the simplified version of HTML that is <a class="inline_disabled" href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">markdown</a>.</p>
+    <p>Markdown leverages the insight that it&rsquo;s possible to add some basic rendering information to a plain text document using standard keyboard characters. You&rsquo;ve probably done this occasionally yourself &mdash; for example, surrounding a word in a text message with <code>*asterisks*</code> to give it special emphasis. Or you may have seen documents that indicate headings with underscores and lists with either dashes or asterisks:</p>
+    <div id="cb1" class="sourceCode">
+        <pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>My Report</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>---------</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>This report makes three recommendations:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="ss">- </span>A first recommendation</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="ss">- </span>A second recommendation</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="ss">- </span>A third recommendation</span></code></pre>
+    </div>
+    <p>As markdown has grown in popularity, others have developed variations on it, such as <a class="inline_disabled" href="https://fletcherpenney.net/multimarkdown/" target="_blank" rel="noopener">Multimarkdown</a> and <a class="inline_disabled" href="https://github.github.com/gfm/#what-is-github-flavored-markdown-" target="_blank" rel="noopener">GitHub-flavored markdown</a>. This kind of development is possible, of course, because markdown is a completely open standard &mdash; anyone can inspect it, understand how it works, and build on it &mdash; applied in the already open environment of plain text.</p>
+    <p>Because both markdown and HTML are open standards, it&rsquo;s easy to create applications that transform one into the other. The website GitHub uses this kind of transformation to take markdown documents and turn them into HTML documents for display on the web.</p>
+    <p>For example, if you look at <a href="https://github.com/cdl-geneseo/command-line/blob/fall-20-workshop/sections/02-text-editors.md">this page</a> on GitHub, you see headings, links, italic text, and images. If you look at the <a href="https://raw.githubusercontent.com/cdl-geneseo/command-line/fall-20-workshop/sections/02-text-editors.md">file that&rsquo;s generating this page</a>, though you&rsquo;ll see that it&rsquo;s just a plain-text document written in markdown.</p>
+    <h2 id="try-your-hand-at-markdown">Try your hand at markdown</h2>
+    <p>In your home folder or your Documents folder, create a folder named <code>journal</code>.</p>
+    <h3 id="write-to-a-new-file">Write to a new file</h3>
+    <p>Launch VS Code and type the following <em>exactly</em> as you see it here, but where you see <code>[Today's date]</code> insert the actual date for today (in any format you like). Don&rsquo;t include the brackets (<code>[ ]</code>).</p>
+    <pre><code># [Today's date]
+
+## Things I Learned Today
+
+### Markdown
+
+Wow! This is my *very first* markdown file!
+
+I'm impressed with myself for **these reasons**:
+
+- I've learned something new
+- I'm on my to becoming a [digital humanist](https://en.wikipedia.org/wiki/Digital_humanities)</code></pre>
+    <h3 id="save-the-file">Save the file</h3>
+    <p>Save the file, naming it <code>journal_yyyy-mm-dd.md</code>. (Replace the y&rsquo;s, m&rsquo;s, and d&rsquo;s with the numbers for today&rsquo;s date, e.g.&nbsp;<code>2020-01-27</code>.) <strong>Be sure to include the <code>.md</code> file extension</strong>.</p>
+    <p>When you saved the file, how did the file contents&rsquo; appearance change in VS Code?</p>
+    <h3 id="add-an-image-to-your-file">Add an image to your file</h3>
+    <ul>
+        <li>Inside your <code>journal</code> folder create another folder named <code>images</code></li>
+        <li>Click the link in your markdown file to the Wikipedia page on &ldquo;Digital Humanities&rdquo;</li>
+        <li>Click on the screengrab of textual analysis of Austen&rsquo;s <em>Pride and Prejudice</em> in the upper right of the page</li>
+        <li>Click the &ldquo;More details button&rdquo; in the next window</li>
+        <li>Click the &ldquo;Download&rdquo; button to the right of the image in the page named &ldquo;File:Pride and Prejudice in Voyant Tools.png&rdquo;</li>
+        <li>Download the &ldquo;Full resolution&rdquo; version of the image and move it to the <code>images</code> folder in your <code>journal</code> folder</li>
+        <li>In your markdown file, type <code>![](images/Pride_and_Prejudice_in_Voyant_Tools.png)</code></li>
+    </ul>
+    <p>What have you just done? To find out, click the &ldquo;Open Preview to the Side&rdquo; button in VS Code.</p>
+</div>

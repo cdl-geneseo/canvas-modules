@@ -1,0 +1,36 @@
+<div style="max-width: 900px; margin: auto;">
+    <p><img id="2117535" style="display: block; margin-left: auto; margin-right: auto;" role="presentation" src="https://canvas.geneseo.edu/courses/20408/files/2117535/preview" alt="" width="620" height="414" data-api-endpoint="https://canvas.geneseo.edu/api/v1/courses/20408/files/2117535" data-api-returntype="File" /></p>
+    <p>In order for CSS to inform the style of the content on the page, it must be integrated with your HTML. CSS can be integrated into your HTML in three ways:</p>
+    <ol>
+        <li>inline</li>
+        <li>internal</li>
+        <li>external (<em>recommended</em>)</li>
+    </ol>
+    <h2>Option 1: Inline</h2>
+    <p>Inline styling adds CSS directly into the HTML of a page to adjust the style of particular parts of a page.</p>
+    <p>For example, if you want the text of your first paragraph to be red, but the text of your second paragraph to be blue:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;</code><br /><code>&lt;html lang="en"&gt;</code><br /><code>&nbsp; &nbsp; &lt;head&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;About&lt;/title&gt;</code><br /><code>&nbsp; &nbsp; &lt;/head&gt;</code><br /><br /><code>&nbsp; &nbsp; &lt;body&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p style="color: red"&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content of paragraph</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p style="color: blue"&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content of paragraph</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</code><br /><code>&nbsp; &nbsp; &lt;/body&gt;</code><br /><code>&lt;/html&gt;</code></pre>
+    <div class="highlight highlight-text-html-basic position-relative overflow-auto">
+        <h2>Option 2: Internal</h2>
+    </div>
+    <p>Internal styling also adds CSS directly into the HTML, but keeps it separate from the content code of the page by adding it into the head using the<span>&nbsp;</span><code>&lt;style&gt;</code><span>&nbsp;</span>tag. When using internal styling you are providing styling rules for the entire page. For example, if you want all headings to be blue:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;</code><br /><code>&lt;html lang="en"&gt;</code><br /><code>&nbsp; &nbsp; &lt;head&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;About&lt;/title&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;style&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; h1 {</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: blue;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/style&gt;</code><br /><code>&nbsp; &nbsp; &lt;/head&gt;</code><br /><br /><code>&nbsp; &nbsp; &lt;body&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;h1&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Heading One</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h1&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content of paragraph</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;h1&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Heading Two</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h1&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content of paragraph</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</code><br /><code>&nbsp; &nbsp; &lt;/body&gt;</code><br /><code>&lt;/html&gt;</code></pre>
+    <h2>Option 3: External (Recommended)</h2>
+    <p>External styling creates a completely separate document for your CSS that will be linked to your HTML in the head section of your HTML document using the code below. This separate document is called a<span>&nbsp;</span><em>stylesheet</em><span>&nbsp;</span>and is often named<span>&nbsp;</span><code>style.css</code>. The document is linked through a void<span>&nbsp;</span><code>&lt;link&gt;</code><span>&nbsp;</span>tag that lives inside the parent<span>&nbsp;</span><code>&lt;head&gt;</code><span>&nbsp;</span>tag. Its<span>&nbsp;</span><code>href</code><span>&nbsp;</span>attribute is a relative link to the document somewhere in relation to the document that references it.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;</code><br /><code>&lt;html lang="en"&gt;</code><br /><code>&nbsp; &nbsp; &lt;head&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;CSS Example&lt;/title&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;link rel="stylesheet" href="style.css" /&gt;</code><br /><code>&nbsp; &nbsp; &lt;/head&gt;</code><br /><br /><code>&nbsp; &nbsp; &lt;body&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; ...</code><br /><code>&nbsp; &nbsp; &lt;/body&gt;</code><br /><code>&lt;/html&gt;</code></pre>
+    <h2>Best Practices</h2>
+    <p>It's best practice to use Option 3, external styling, for a number of reasons:</p>
+    <ol>
+        <li>It helps us remember what each language focuses on: HTML is for<span>&nbsp;</span><em>content</em>, CSS is for<span>&nbsp;</span><em>styling</em>. (This is sometimes referred to as the principle of<span>&nbsp;</span><a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">"separation of concerns"</a>)</li>
+        <li>It helps us maintain consistency across the various pages of our site as<span>&nbsp;</span><em>multiple HTML files can link to the same stylesheet</em>.</li>
+        <li>Because multiple HTML files can link to the same CSS file, it's not necessary to write the same CSS code multiple times. Once suffices. (This is sometimes referred to as the<span>&nbsp;</span><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">"Don't Repeat Yourself" principle</a>, or simply<span>&nbsp;</span><em>DRY</em>.)</li>
+    </ol>
+    <p>Option 3, external styling, is preferred by most web developers because it's more manageable and because it lends itself to greater consistency across the entire site.</p>
+    <div class="highlight highlight-text-html-basic position-relative overflow-auto">
+        <p>&nbsp;</p>
+        <hr />
+        <h3>Attribution</h3>
+        <p><span style="font-size: 10pt;">Based on a work by the CUNY Graduate Center at&nbsp;<a href="https://github.com/DHRI-Curriculum">https://github.com/DHRI-Curriculum/html-css</a>.</span></p>
+        <p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://camo.githubusercontent.com/0df8fd3e955d97ae69dedfa2568fb2dd4186cd60917ca40aefabb7466d5b46ce/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d73612f342e302f38387833312e706e67" alt="Creative Commons License" data-canonical-src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
+    </div>
+</div>
